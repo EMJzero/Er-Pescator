@@ -16,8 +16,10 @@ Open up a terminal of your liking (since I assume you are on Windows, the CMD is
 Now, install via `pip` the following packages:
 
 - **vgamepad** ([this library](https://pypi.org/project/vgamepad/)) <br>
-    This will require you to install, also, some drivers, that the library will use to simulate a game-pad, follow the instructions on the wizard that pops on screen as you install the package to do so.
-- **keyboard** ([this library](https://pypi.org/project/keyboard/))
+    This will require you to install, also, some drivers, that the library will use to simulate a game-pad, follow the instructions on the wizard that pops on screen as you install the package to do so.<br>
+    `pip install vgamepad`
+- **keyboard** ([this library](https://pypi.org/project/keyboard/))<br>
+    `pip install keyboard`
 
 Finally, download the code for "Er Pescator" from this github page, or [click this link](blob:https://github.com/06a684fe-7eba-4260-8d32-ea9bfd551099)!<br>
 Alternatively, if you have `git` ready to use, you can directly clone this repository.<br>
