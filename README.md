@@ -19,18 +19,26 @@ Now, install via `pip` the following packages:
     This will require you to install, also, some drivers, that the library will use to simulate a game-pad, follow the instructions on the wizard that pops on screen as you install the package to do so.
 - **keyboard** ([this library](https://pypi.org/project/keyboard/))
 
-Finally, download the code for "Er Pescator" from this github page, or [click this link](nope)!<br>
-You will be downloading the python script called `er_pescator.py` that performs the fishing :) .
+Finally, download the code for "Er Pescator" from this github page, or [click this link](blob:https://github.com/06a684fe-7eba-4260-8d32-ea9bfd551099)!<br>
+Alternatively, if you have `git` ready to use, you can directly clone this repository.<br>
+Anyway, you will be downloading the python script called `er_pescator.py` that performs the fishing :) .
+
+Note that, before using the script, you need to restart Destiny 2 (if it was running since before the package installation process), as it needs to recognize the drivers for the simulated controller, and it does so on startup.
 
 ## Usage
 
 We shall now fish!
-- Open the `er_pescator.py` script with right-click and "open with IDLE" (choose the newest version of python if prompted to do so);
-- On the window that opens up, just press "F5" to run the script.
+- Open the `er_pescator.py` script with right-click and "open with IDLE" (choose the newest version of python if prompted to do so). This shall open a new window with the script's code, ignore it for now.
+- In Destiny 2, reach a pond and get close to it until you see the prompt to start fishing.
+- On the IDLE window we previously opened up, press "F5" to run the script.
+- Now move to Destiny 2 and press `9`.
 
 Once the script is running, its commands are the following:
-- `1`: start the fishing routine
+- `9`: start the fishing routine
 - `0`: stop the fishing routine
 
-Important:
->The script uses the rumble commands sent to the controller as cue to decide when to pick up the fish, as the rumble is slightly random, it might happen that it missfires and starts going idle, in that case just restart the fishing routine by just pressing `1`.
+### **Important**
+The script uses the rumble commands sent to the controller as cue to decide when to pick up the fish, as the rumble is slightly random, it might happen that it missfires and starts going idle, in that case just restart the fishing routine by just pressing `9`.<br><br>
+If you are cursious and want to tune the behavior of the script, you can enable the logging of rumble values by changing line 6 into:<br>
+`log_rumble_values = True`<br>
+And then you can play around with the **lower bounds** of the two values on line 18. The values range from 0 to 255, so leave the upper bounds untouched. I found the (200, 220) pair of lower bounds to be pretty reliable, bue feel free to try others!

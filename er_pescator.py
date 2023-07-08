@@ -2,12 +2,13 @@ import vgamepad as vg
 import keyboard as kb
 import time
 
+#log rumble inputs sent to the controller
+log_rumble_values = False
+
 #global state
 executing = False
 #prevent overlapping of multiple executions
 lock = False
-#log rumble inputs sent to the controller
-log_rumble_values = False
 
 def rumble_callback(client, target, large_motor, small_motor, led_number, user_data):
     global lock, executing
@@ -41,7 +42,7 @@ def rumble_callback(client, target, large_motor, small_motor, led_number, user_d
 
 gamepad = vg.VX360Gamepad()
 
-print("Commands:\n 1 -> start fishing routine\n 0 -> abort fishing routine\n\n")
+print("Commands:\n 9 -> start fishing routine\n 0 -> abort fishing routine\n\n")
 
 def start(event):
     global executing
@@ -70,7 +71,7 @@ def abort(event):
     print("Aborting...")
     executing = False
     
-kb.on_press_key("1", start)
+kb.on_press_key("9", start)
 kb.on_press_key("0", abort)
 
 
