@@ -66,10 +66,11 @@ def start(event):
     executing = True
 
 def abort(event):
-    global executing
+    global executing, lock
 
     gamepad.unregister_notification()
     print("Aborting...")
+    lock = False
     executing = False
     
 kb.on_press_key("9", start)

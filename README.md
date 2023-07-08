@@ -41,7 +41,7 @@ Once the script is running, its commands are the following:
 - `0`: stop the fishing routine
 
 ### **Important**
-The script uses the rumble commands sent to the controller as cue to decide when to pick up the fish, as the rumble is slightly random, it might happen that it missfires and starts going idle, in that case just restart the fishing routine by just pressing `9`.<br><br>
-If you are cursious and want to tune the behavior of the script, you can enable the logging of rumble values by changing line 6 into:<br>
+The script uses the rumble commands sent to the controller as cue to decide when to pick up the fish, as the rumble is slightly random, it might happen that it missfires and starts going idle, in that case just restart the fishing routine by pressing `9`.<br><br>
+If you are curious and want to tune the behavior of the script, you can enable the logging of rumble values by changing line 6 into:<br>
 `log_rumble_values = True`<br>
 And then you can play around with the **lower bounds** of the two values on line 18. The values range from 0 to 255, so leave the upper bounds untouched. I found the (200, 220) pair of lower bounds to be pretty reliable, bue feel free to try others!
