@@ -34,6 +34,7 @@ We shall now fish!
 - In Destiny 2, reach a pond and get close to it until you see the prompt to start fishing.
 - On the IDLE window we previously opened up, press "F5" to run the script.
 - Now move to Destiny 2 and press `9`.
+- Finally, you can even do other stuff with your computer now, Destiny 2 does not need to be in the foreground!
 
 Once the script is running, its commands are the following:
 - `9`: start the fishing routine

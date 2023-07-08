@@ -18,6 +18,7 @@ def rumble_callback(client, target, large_motor, small_motor, led_number, user_d
     if 200 < large_motor < 255 and 220 < small_motor < 255  and not lock and executing:
         lock = True
         
+        time.sleep(0.1)
         print("PRESSING X")
         #fish up
         gamepad.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_X)
