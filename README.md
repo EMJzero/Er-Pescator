@@ -21,16 +21,18 @@ Now, install via `pip` the following packages:
 - **keyboard** ([this library](https://pypi.org/project/keyboard/))<br>
     `pip install keyboard`
 
-Finally, download the code for "Er Pescator" from this github page, or [click this link](blob:https://github.com/06a684fe-7eba-4260-8d32-ea9bfd551099)!<br>
+Finally, download the code for "Er Pescator" from this github page, [click this link](https://github.com/EMJzero/Er-Pescator/blob/master/er_pescator.py) and press the download icon on the top right side of the text area!<br>
 Alternatively, if you have `git` ready to use, you can directly clone this repository.<br>
 Anyway, you will be downloading the python script called `er_pescator.py` that performs the fishing :) .
 
 Note that, before using the script, you need to restart Destiny 2 (if it was running since before the package installation process), as it needs to recognize the drivers for the simulated controller, and it does so on startup.
 
+One last thing, make sure to have the controller **rumble enabled** in Destiny 2.
+
 ## Usage
 
 We shall now fish!
-- Open the `er_pescator.py` script with right-click and "open with IDLE" (choose the newest version of python if prompted to do so). This shall open a new window with the script's code, ignore it for now.
+- Open the `er_pescator.py` script with right-click and "open with IDLE" or "edit with IDLE" (choose the newest version of python if prompted to do so). This shall open a new window with the script's code, ignore it for now.
 - In Destiny 2, reach a pond and get close to it until you see the prompt to start fishing.
 - On the IDLE window we previously opened up, press "F5" to run the script.
 - Now move to Destiny 2 and press `9`.
