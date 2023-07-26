@@ -10,8 +10,11 @@ executing = False
 #prevent overlapping of multiple executions
 lock = False
 
+anti_afk_counter_reset = 5
+anti_afk_counter = anti_afk_counter_reset
+
 def rumble_callback(client, target, large_motor, small_motor, led_number, user_data):
-    global lock, executing
+    global lock, executing, anti_afk_counter, anti_afk_counter_reset
     
     if executing and log_rumble_values:
         print(f"time: {time.time()}, large motor: {large_motor}, small motor: {small_motor}")
@@ -29,6 +32,17 @@ def rumble_callback(client, target, large_motor, small_motor, led_number, user_d
         #next throw
         time.sleep(4)
         if executing:
+            if anti_afk_counter == 0:
+                print("JUMPING")
+                anti_afk_counter = anti_afk_counter_reset
+                gamepad.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
+                gamepad.update()
+                time.sleep(0.5)
+                gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
+                gamepad.update()
+                time.sleep(2)
+            else:
+                anti_afk_counter -= 1
             print("FISHING")
             gamepad.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_X)
             gamepad.update()
@@ -46,7 +60,7 @@ gamepad = vg.VX360Gamepad()
 print("Commands:\n 9 -> start fishing routine\n 0 -> abort fishing routine\n\n")
 
 def start(event):
-    global executing
+    global executing, anti_afk_counter, anti_afk_counter_reset
 
     gamepad.register_notification(callback_function=rumble_callback)
     #press a button to wake the device up
@@ -64,6 +78,7 @@ def start(event):
     gamepad.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_X)
     gamepad.update()
     executing = True
+    anti_afk_counter = anti_afk_counter_reset
 
 def abort(event):
     global executing, lock
@@ -75,8 +90,6 @@ def abort(event):
     
 kb.on_press_key("9", start)
 kb.on_press_key("0", abort)
-
-
 
 
 
